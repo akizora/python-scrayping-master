@@ -28,7 +28,8 @@ class ListCrawler():
         self.DB_PW = config.DB_PW
         self.DB_NAME = config.DB_NAME
         self.DB_TABLE_1 = config.DB_TABLE_1
-        
+        self.XML_PATH = config.XML_PATH
+
         self.conn = pymysql.connect(
             host=self.DB_HOST,
             user=self.DB_USER, 
@@ -72,7 +73,7 @@ class ListCrawler():
         """
         job_detail_url_list = []
         try:
-            with open() as doc:
+            with open(self.XML_PATH) as doc:
                 sitemap_soup = bs4.BeautifulSoup(doc, 'lxml-xml')
                 job_detail_job_elem_list = sitemap_soup.find_all('job')
             for job_detail_job_elem in job_detail_job_elem_list:
