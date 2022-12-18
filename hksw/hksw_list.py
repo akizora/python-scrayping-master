@@ -64,7 +64,6 @@ class ListCrawler():
         return target_urls
 
 
-
     def get_url_list_from_xml(self):
         """XMlからURLリストを取得する.
 
